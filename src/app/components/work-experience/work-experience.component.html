@@ -1,0 +1,52 @@
+<section class="experience">
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="experience__wrapper">
+    <!-- Left Navigation -->
+    <button
+      type="button"
+      class="slider-btn slider-btn--left"
+      (click)="prev()"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+
+    <!-- Slide Content -->
+    <div class="experience__slide">
+      <img
+        class="experience__image"
+        [src]="currentImage.src"
+        [alt]="currentImage.caption || 'Work experience image'"
+      />
+      @if (currentImage.caption) {
+        <p class="experience__caption">
+          {{ currentImage.caption }}
+        </p>
+      }
+    </div>
+
+    <!-- Right Navigation -->
+    <button
+      type="button"
+      class="slider-btn slider-btn--right"
+      (click)="next()"
+      aria-label="Next image"
+    >
+      ›
+    </button>
+  </div>
+
+  <!-- Pagination Dots -->
+  <div class="experience__dots">
+    @for (img of images; track $index) {
+      <button
+        type="button"
+        class="experience__dot"
+        [class.experience__dot--active]="$index === currentIndex"
+        (click)="goTo($index)"
+        [attr.aria-label]="'Go to slide ' + ($index + 1)"
+      ></button>
+    }
+  </div>
+</section>

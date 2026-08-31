@@ -1,0 +1,20 @@
+<section class="game-banner">
+  <video
+    class="game-banner__video"
+    [src]="videoSrc"
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+
+  <div class="game-banner__overlay"></div>
+
+  <div class="game-banner__content">
+    <h1 class="game-banner__title">Game Title Here</h1>
+    <p class="game-banner__subtitle">A short tagline about the game</p>
+    <button class="game-banner__cta" (click)="onLearnMoreClick()">
+      Learn More
+    </button>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="education">
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card" *ngFor="let edu of educationList" [style.background-image]="'url(' + edu.image + ')'" (click)="openEdu(edu)">
+      <div class="edu-overlay">
+        <p class="edu-meta">{{ edu.years }} · {{ edu.location }}</p>
+        <p class="edu-degree">{{ edu.degree }}</p>
+        <p class="edu-field">{{ edu.field }}</p>
+        <p class="edu-institution">{{ edu.institution }}</p>
+      </div>
+      <button class="edu-btn">+</button>
+    </div>
+  </div>
+</section>
+
+<div class="overlay" *ngIf="selectedEdu" (click)="closeEdu()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h3>{{ selectedEdu.degree }}</h3>
+    <p class="modal-institution">{{ selectedEdu.institution }} · {{ selectedEdu.years }}</p>
+    <p class="modal-summary">{{ selectedEdu.summary }}</p>
+    <button class="close-btn" (click)="closeEdu()">close</button>
+  </div>
+</div>

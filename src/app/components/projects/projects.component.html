@@ -1,0 +1,65 @@
+<section class="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-slider-wrapper">
+    <!-- Left Navigation Button -->
+    <button
+      type="button"
+      class="slider-btn slider-btn--left"
+      (click)="scrollLeft()"
+      aria-label="Scroll left"
+    >
+      ‹
+    </button>
+
+    <!-- Horizontal Scroll Track -->
+    <div class="projects-track" #projectsTrack>
+      <div
+        class="project-card"
+        *ngFor="let project of projectsList"
+        [style.background-image]="'url(' + project.image + ')'"
+        (click)="openProject(project)"
+      >
+        <div class="project-overlay">
+          <p class="project-meta">{{ project.category }} · {{ project.year }}</p>
+          <p class="project-title">{{ project.title }}</p>
+          <p class="project-tech">{{ project.technologies }}</p>
+          <p class="project-subtitle">{{ project.subtitle }}</p>
+        </div>
+        <button type="button" class="project-btn" aria-label="View project details">+</button>
+      </div>
+    </div>
+
+    <!-- Right Navigation Button -->
+    <button
+      type="button"
+      class="slider-btn slider-btn--right"
+      (click)="scrollRight()"
+      aria-label="Scroll right"
+    >
+      ›
+    </button>
+  </div>
+</section>
+
+<!-- Detail Modal -->
+<div class="overlay" *ngIf="selectedProject" (click)="closeProject()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h3>{{ selectedProject.title }}</h3>
+    <p class="modal-meta">{{ selectedProject.category }} · {{ selectedProject.year }}</p>    <p class="modal-tech"><strong>Tech Stack:</strong> {{ selectedProject.technologies }}</p>
+    <p class="modal-summary">{{ selectedProject.summary }}</p>
+
+    <div class="modal-actions" *ngIf="selectedProject.link">
+      <a
+        [href]="selectedProject.link"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-link-btn"
+      >
+        View Project
+      </a>
+    </div>
+
+    <button type="button" class="close-btn" (click)="closeProject()">close</button>
+  </div>
+</div>

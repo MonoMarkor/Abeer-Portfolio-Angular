@@ -1,0 +1,18 @@
+services:
+  angular:
+    image: node:23-alpine
+    container_name: angular_dev
+    working_dir: /app
+    ports:
+      - 4200:4200
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USERPOLLING=true
+    command: sh -c "npm install && npx ng serve --host 0.0.0.0 --poll 2000"
+
+# docker compose exec angular sh
+
+# run once to setup an empty angular project
+# docker run --rm -v "${PWD}:/app" -w /app node:23-alpine sh -c "npx -p @angular/cli ng new my-app --directory ."

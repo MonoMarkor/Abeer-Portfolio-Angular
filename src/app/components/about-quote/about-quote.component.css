@@ -1,0 +1,45 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 5rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about__quote {
+  margin: 0;
+  border: none;
+}
+
+.about__quote-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #222;
+  margin: 0 0 0.75rem;
+}
+
+.about__quote-name {
+  font-size: 0.95rem;
+  font-style: normal;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+}

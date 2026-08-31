@@ -1,0 +1,18 @@
+<section class="social" id="contact">
+  <h2 class="social__title">Get in Touch</h2>
+
+  <div class="social__links">
+    @for (link of links; track link.label) {
+      <a
+        class="social__item"
+        [href]="link.href"
+        [target]="link.isExternal ? '_blank' : null"
+        [rel]="link.isExternal ? 'noopener noreferrer' : null"
+        [attr.aria-label]="link.label"
+      >
+        <span class="social__icon" [innerHTML]="getIcon(link.icon)"></span>
+        <span class="social__label">{{ link.label }}</span>
+      </a>
+    }
+  </div>
+</section>

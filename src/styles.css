@@ -1,0 +1,24 @@
+:root {
+  /* Brand colors */
+  --color-red: #e63946;
+  --color-teal: #51a3a3;
+  --color-white: #ffffff;
+
+  /* Optional shades/tints for flexibility */
+  --color-red-dark: #c22836;
+  --color-teal-dark: #3d7d7d;
+  --color-teal-light: #a3d4d4;
+  --color-off-white: #f9f9f9;
+
+  /* Text/background semantic aliases (recommended) */
+  --color-text-primary: #1a1a1a;
+  --color-text-muted: #777777;
+  --color-background: var(--color-white);
+  --color-accent: var(--color-teal);
+  --color-accent-alt: var(--color-red);
+
+  --color-surface-dark: #1e1e1e;
+  --color-border-dark: #333333;
+  --color-text-light: #e0e0e0;
+  --color-text-light-muted: #a0a0a0;
+}

@@ -1,0 +1,29 @@
+<section class="tech-stack">
+  <h2 class="section-title">Tech Stack</h2>
+
+  <!-- Category Filter Pills -->
+  <div class="category-tabs">
+    <button
+      type="button"
+      *ngFor="let cat of categories"
+      class="tab-btn"
+      [class.tab-btn--active]="activeCategory === cat"
+      (click)="setActiveCategory(cat)"
+    >
+      {{ cat }}
+    </button>
+  </div>
+
+  <!-- Tech Items Grid -->
+  <div class="tech-grid">
+    <div class="tech-card" *ngFor="let tech of filteredTech">
+      <div class="tech-card__header">
+        <span class="tech-card__name">{{ tech.name }}</span>
+        <span class="tech-card__badge" [class.tech-card__badge--advanced]="tech.level === 'Advanced'">
+          {{ tech.level }}
+        </span>
+      </div>
+      <p class="tech-card__desc" *ngIf="tech.description">{{ tech.description }}</p>
+    </div>
+  </div>
+</section>

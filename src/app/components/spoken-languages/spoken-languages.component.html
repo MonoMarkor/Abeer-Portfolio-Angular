@@ -1,0 +1,11 @@
+<div class="spoken-languages">
+  <div class="lang-container">
+    <span class="lang-title">Spoken Languages</span>
+    <div class="lang-pills">
+      <div class="lang-pill" *ngFor="let lang of languages">
+        <span class="lang-pill__name">{{ lang.name }}</span>
+        <span class="lang-pill__level">{{ lang.level }}</span>
+      </div>
+    </div>
+  </div>
+</div>
