@@ -1,0 +1,10 @@
+<section class="blog-list">
+  <h2 class="section-title">~/blog</h2>
+  <div class="post-list">
+    <a *ngFor="let post of posts" [routerLink]="['/blog', post.slug]" class="post-item" >
+      <p class="post-date">{{ post.date }}</p>
+      <p class="post-title">{{ post.title }}</p>
+      <p class="post-desc">{{ post.description }}</p>
+    </a>
+  </div>
+</section>

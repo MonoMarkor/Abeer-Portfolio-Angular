@@ -10,7 +10,7 @@ services:
       - /app/node_modules
     environment:
       - CHOKIDAR_USERPOLLING=true
-    command: sh -c "npm install && npx ng serve --host 0.0.0.0 --poll 2000"
+    command: sh -c "npm install && npm run generate-blogs && npx ng serve --host 0.0.0.0 --poll 2000"
 
 # docker compose exec angular sh
 

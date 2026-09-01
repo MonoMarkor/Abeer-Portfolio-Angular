@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   navLinks = [
     { label: 'Home', fragment: 'top' },
-    { label: 'Contact', fragment: 'contact' }
+    { label: 'Contact', fragment: 'contact' },
+    { label: 'Blog', fragment: 'contact' },
   ];
 }
