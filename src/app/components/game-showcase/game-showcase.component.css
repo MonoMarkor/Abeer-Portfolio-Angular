@@ -1,19 +1,26 @@
 .game-banner {
   position: relative;
+
   width: 100%;
   height: 90vh;
-  overflow: hidden;
+  min-height: 520px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 }
 
 .game-banner__video {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   z-index: 0;
   pointer-events: none;
 }
@@ -21,63 +28,84 @@
 .game-banner__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.62)
+    );
+
   z-index: 1;
 }
 
 .game-banner__content {
   position: relative;
+
   z-index: 2;
-  text-align: center;
-  color: #ffffff;
-  padding: 0 1.5rem;
+
   max-width: 800px;
+  padding: 0 var(--content-padding);
+
+  text-align: center;
+  color: var(--color-white);
 }
 
 .game-banner__title {
-  font-size: 3rem;
+  margin: 0 0 0.625rem;
+
+  font-family: var(--font-sans);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
   line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .game-banner__subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  line-height: 1.4;
+  margin: 0 0 1.75rem;
+
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .game-banner__cta {
   padding: 0.75rem 2rem;
-  font-size: 1rem;
+
+  border: 1px solid var(--color-teal);
+  border-radius: var(--radius-sm);
+
+  background: var(--color-teal);
+  color: var(--color-white);
+
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
   font-weight: 600;
-  border: none;
-  border-radius: 4px;
-  background-color: #ffffff;
-  color: #111111;
+
   cursor: pointer;
-  transition: background-color 0.2s ease;
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
 }
 
-.game-banner__cta:hover,
-.game-banner__cta:focus-visible {
-  background-color: #e5e5e5;
+.game-banner__cta:hover {
+  background: var(--color-teal-dark);
+  border-color: var(--color-teal-dark);
+  transform: translateY(-2px);
 }
 
 .game-banner__cta:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 2px solid var(--color-white);
   outline-offset: 4px;
 }
 
 @media (max-width: 600px) {
   .game-banner {
     height: 80vh;
-  }
-  .game-banner__title {
-    font-size: 2rem;
-  }
-  .game-banner__subtitle {
-    font-size: 1rem;
+    min-height: 480px;
   }
 }

@@ -1,65 +1,87 @@
 .spoken-languages {
-  max-width: 1200px;
+  max-width: var(--content-width);
   margin: 0 auto 2rem;
-  padding: 0 1.5rem;
+
+  padding: 0 var(--content-padding);
 }
 
 .lang-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 16px 24px;
-  background-color: var(--color-surface-dark);
-  border: 1px solid var(--color-border-dark);
-  border-radius: 40px;
+
+  gap: 1.25rem;
+
   width: fit-content;
+  max-width: 100%;
+
   margin: 0 auto;
+  padding: 1rem 1.5rem;
+
+  background: var(--color-surface-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-pill);
+
+  box-shadow: var(--shadow-dark);
 }
 
 .lang-title {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  color: var(--color-teal);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  color: var(--color-teal);
 }
 
 .lang-pills {
   display: flex;
   align-items: center;
-  gap: 12px;
   flex-wrap: wrap;
+
+  gap: 0.75rem;
 }
 
 .lang-pill {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+
+  padding: 0.25rem 0.75rem;
+
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--color-border-dark);
-  padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
 }
 
 .lang-pill__name {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--color-white);
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
   font-weight: 500;
+
+  color: var(--color-white);
 }
 
 .lang-pill__level {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+
   color: var(--color-text-light-muted);
-  font-size: 11px;
 }
 
 @media (max-width: 600px) {
   .lang-container {
+    width: 100%;
+
     flex-direction: column;
-    border-radius: 12px;
-    padding: 16px;
+
+    border-radius: var(--radius-lg);
+
+    padding: 1rem;
+  }
+
+  .lang-pills {
+    justify-content: center;
   }
 }
