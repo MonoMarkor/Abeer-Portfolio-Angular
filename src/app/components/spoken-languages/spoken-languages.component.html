@@ -3,6 +3,7 @@
     <span class="lang-title">Spoken Languages</span>
     <div class="lang-pills">
       <div class="lang-pill" *ngFor="let lang of languages">
+        <img src={{lang.svg}} alt="flag" class="lang-pill__flag" />
         <span class="lang-pill__name">{{ lang.name }}</span>
         <span class="lang-pill__level">{{ lang.level }}</span>
       </div>

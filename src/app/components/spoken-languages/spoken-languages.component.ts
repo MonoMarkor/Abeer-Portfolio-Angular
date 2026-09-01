@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 interface Language {
   name: string;
   level: string;
+  svg: string;
 }
 
 @Component({
@@ -14,8 +15,8 @@ interface Language {
 })
 export class SpokenLanguagesComponent {
   languages: Language[] = [
-    { name: 'English', level: 'Bilingual' },
-    { name: 'Urdu', level: 'Native' },
-    { name: 'German', level: 'C1 Level' }
+    { name: 'English', level: 'Bilingual', svg: 'gb.svg' },
+    { name: 'Urdu', level: 'Native', svg: 'pk.svg' },
+    { name: 'German', level: 'C1 Level', svg: 'de.svg' }
   ];
 }
