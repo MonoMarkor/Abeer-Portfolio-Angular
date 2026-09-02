@@ -18,6 +18,10 @@
         class="experience__image"
         [src]="currentImage.src"
         [alt]="currentImage.caption || 'Work experience image'"
+        (click)="onImageClick(currentImage.link)"
+        (keydown.enter)="onImageClick(currentImage.link)"
+        tabindex="0"
+        role="button"
       />
       @if (currentImage.caption) {
         <p class="experience__caption">

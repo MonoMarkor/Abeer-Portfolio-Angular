@@ -4,67 +4,112 @@
   padding: var(--section-padding);
 }
 
+/* ─────────────────────────────
+   Section title
+   ───────────────────────────── */
+
 .section-title {
   font-family: var(--font-mono);
-  color: var(--color-accent);
-  font-size: var(--font-size-lg);
+  color: var(--color-teal);
+  font-size: var(--text-lg);
   font-weight: 500;
   margin: 0 0 1.75rem;
 }
 
+/* ─────────────────────────────
+   Post list
+   ───────────────────────────── */
+
 .post-list {
-  border-top: 1px solid var(--color-border-dark);
+  border-top: 1px solid var(--color-border);
 }
+
+/* ─────────────────────────────
+   Post item
+   ───────────────────────────── */
 
 .post-item {
   display: block;
+
   padding: 1.35rem 0;
-  border-bottom: 1px solid var(--color-border-dark);
+
+  border-bottom: 1px solid var(--color-border);
+
   text-decoration: none;
   color: inherit;
-  transition: padding-left var(--transition-fast), border-color var(--transition-fast);
+
+  transition:
+    padding-left var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .post-item:hover {
   padding-left: 0.5rem;
-  border-color: var(--color-accent);
+  border-color: var(--color-teal);
 }
 
-.post-date { font-family: var(--font-mono);
-  color: var(--color-text-light-muted);
-  font-size: var(--font-size-xs);
+/* ─────────────────────────────
+   Date
+   ───────────────────────────── */
+
+.post-date {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+
+  font-size: var(--text-xs);
   letter-spacing: 0.03em;
+
   margin: 0 0 0.4rem;
 }
+
+/* ─────────────────────────────
+   Title
+   ───────────────────────────── */
 
 .post-title {
   font-family: var(--font-sans);
-  color: var(--color-text-light);
-  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+
+  font-size: var(--text-lg);
   font-weight: 600;
+
   margin: 0 0 0.4rem;
+
   transition: color var(--transition-fast);
 }
 
 .post-item:hover .post-title {
-  color: var(--color-accent);
+  color: var(--color-teal);
 }
+
+/* ─────────────────────────────
+   Description
+   ───────────────────────────── */
 
 .post-desc {
   font-family: var(--font-sans);
-  color: var(--color-text-light-muted);
-  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-sm);
   line-height: 1.6;
+
   margin: 0;
 }
+
+/* ─────────────────────────────
+   Mobile
+   ───────────────────────────── */
 
 @media (max-width: 600px) {
   .blog-list {
     padding: var(--section-padding-mobile);
-   }
-   .post-item:hover {
+  }
+
+  .post-item:hover {
     padding-left: 0;
-  } .post-title {
-    font-size: var(--font-size-base);
+  }
+
+  .post-title {
+    font-size: var(--text-base);
   }
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface SlideImage {
   src: string;
   caption?: string;
+  link?: string;
 }
 
 @Component({
@@ -15,14 +17,16 @@ interface SlideImage {
 export class WorkExperienceComponent implements OnInit, OnDestroy {
 
   images: SlideImage[] = [
-    { src: 'MediTech_1.jpg', caption: 'MediTech' },
-    { src: 'MediTech_2.png', caption: 'Internal tool UI' },
+    { src: 'MediTech_1.jpg', caption: 'MediTech', link: '/blog/MediTech' },
+    { src: 'MediTech_2.png', caption: 'Internal tool UI', link: '/blog/MediTech' },
     // { src: 'assets/images/work/photo-2.jpg', caption: 'Team demo day' },
     // { src: 'assets/images/work/screenshot-2.jpg', caption: 'Dashboard feature' },
   ];
 
+  constructor(private router: Router){}
+
   currentIndex = 0;
-  private slideIntervalMs = 4000;
+  private slideIntervalMs = 5000;
   private intervalId?: ReturnType<typeof setInterval>;
 
   get currentImage(): SlideImage {
@@ -35,6 +39,12 @@ export class WorkExperienceComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.stopAutoSlide();
+  }
+
+  onImageClick(link?: string): void {
+    if (link) {
+      this.router.navigate([link]);
+    }
   }
 
   startAutoSlide(): void {

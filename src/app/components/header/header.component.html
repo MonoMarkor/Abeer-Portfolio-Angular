@@ -1,13 +1,30 @@
 <header class="header">
   <div class="header__inner">
-    <a class="header__logo" href="#top">Ahmad Abeer Ahsan</a>
+
+    <a class="header__logo" [routerLink]="['/']" fragment="top">
+      Ahmad Abeer Ahsan
+    </a>
 
     <nav class="header__nav">
-      @for (link of navLinks; track link.fragment) {
-        <a class="header__link" [href]="'#' + link.fragment">
-          {{ link.label }}
-        </a>
+      @for (link of navLinks; track link.label) {
+
+        @if (link.fragment) {
+          <a
+            class="header__link"
+            [routerLink]="[link.route]"
+            [fragment]="link.fragment">
+            {{ link.label }}
+          </a>
+        } @else {
+          <a
+            class="header__link"
+            [routerLink]="[link.route]">
+            {{ link.label }}
+          </a>
+        }
+
       }
     </nav>
+
   </div>
 </header>

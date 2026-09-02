@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
   navLinks = [
-    { label: 'Home', fragment: 'top' },
-    { label: 'Contact', fragment: 'contact' },
-    { label: 'Blog', fragment: 'contact' },
+    { label: 'Home', route: '', fragment: 'top' },
+    { label: 'Contact', route: '', fragment: 'contact' },
+    { label: 'Blog', route: '/blog' },
   ];
 }
