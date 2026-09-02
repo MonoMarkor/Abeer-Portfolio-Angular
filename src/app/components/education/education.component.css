@@ -71,11 +71,18 @@
   margin: 0 0 0.375rem;
 
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.05em;
 
-  color: var(--color-teal);
+  color: var(--color-white);
+  /* -webkit-text-stroke: 0.02em var(--color-white); */
+
+  /* --- New Background Styles --- */
+  background-color: rgba(0, 0, 0, 0.2); /* Black with 30% opacity */
+  padding: 0.15rem 0.4rem; /* Adds breathing room around the text */
+  border-radius: 6px; /* Softens the edges of the background */
+  display: inline-block; /* Ensures the background only wraps the text itself */
 }
 
 .edu-degree {

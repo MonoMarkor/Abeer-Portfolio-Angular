@@ -145,7 +145,13 @@
   font-weight: 500;
   letter-spacing: 0.05em;
 
-  color: var(--color-teal);
+  color: var(--color-white);
+
+    /* --- New Background Styles --- */
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 .project-title {
